@@ -2,6 +2,7 @@
 function Player (mark) {
   this.mark = mark;
   this.spaces = [];
+
 }
 
 function Game(playerOne, playerTwo) {
@@ -17,14 +18,24 @@ Game.prototype.switchPlayer = function () {
     this.currentPlayer = this.playerOne;
   }
 }
-//first attempt to define winning game:
-// var win = function(){
-//   if(currentPlayer === spaceId[1,2,3]) {
-//     alert("currentPlayer won")
+
+// not working function to declare game won:
+// Game.prototype.win = function(){
+// var wins = ["square01","square02","square03"]
+//   if(this.currentPlayer.spaces.contains === wins) {
+//     console.log("currentPlayer won");
+// console.log(this.currentPlayer.spaces);
+//   } else {
+//     console.log("sorry!");
 //   }
 // }
 
 
+
+//function to display X/O ...add this line to html (onclick="myFunction()")
+// function myFunction() {
+//     document.getElementById("square01").innerHTML = "x";
+// }
 
 // switch player logic//
 // var letter = "x";
@@ -35,15 +46,6 @@ Game.prototype.switchPlayer = function () {
 //   letter = "x";
 // }
 
-// what is this??
-//  function Board (number) {
-//   var board = [];
-//   for (var x = 0; x <= number; x++);
-//     board.push([]);
-//     for (var y = 0; y <= number; y++);
-//       board.push([]);
-//       return board;
-// }
 
 //user interface logic//
 $(document).ready(function() {
@@ -51,11 +53,12 @@ $(document).ready(function() {
   var playerTwo = new Player("O");
 
   var newGame = new Game(playerOne, playerTwo);
-  $("#gameBoard td").click(function(event) {
+  $("#gameBoard td").one('click',function(event) {
     var spaceId = $(this).attr('id');
     newGame.currentPlayer.spaces.push(spaceId);
     console.log(newGame.currentPlayer);
     console.log(newGame.currentPlayer.spaces);
-    newGame.switchPlayer();
+    console.log(newGame.win());
+    // newGame.switchPlayer();
   });
  });

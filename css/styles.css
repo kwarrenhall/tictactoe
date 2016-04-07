@@ -15,3 +15,8 @@
 .selectXO {
   width: 100px;
 }
+
+td {
+  font-size: 4em;
+  text-align: center;
+}
