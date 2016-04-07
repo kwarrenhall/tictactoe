@@ -19,7 +19,6 @@ Game.prototype.switchPlayer = function () {
   }
 }
 
-// not working function to declare game won:
 // Game.prototype.win = function(){
 // var wins = ["square01","square02","square03"]
 //   if(this.currentPlayer.spaces.contains === wins) {
@@ -28,7 +27,7 @@ Game.prototype.switchPlayer = function () {
 //   } else {
 //     console.log("sorry!");
 //   }
-// }
+}
 
 
 
